@@ -3,14 +3,14 @@ import ResetPasswordComponent from '../components/ResetPasswordComponent';
 import {connect} from 'react-redux';
 
 
-const mapStateToProps = (state, ownProps)=>{
+const mapStateToProps = (state)=>{
     return ({
        inValidError : state.inValidError,
        misMatchError : state.misMatchError
     });
 }
 
-const mapDispatchToProps  = (dispatch, ownProps, getState)=>{
+const mapDispatchToProps  = (dispatch)=>{
     return ({
         handlePasswordBlur :(evt) => {
             dispatch({type:"VALIDATE_PASSWORD", payload:{name:"password", value:evt.target.value}})    
